@@ -96,16 +96,27 @@ section {
     border: 3px solid gray;
     display: flex;
     width: 100%;
-    margin-left: 2%;
     padding: 2%;
+    margin-left: 2%;
 
 }
 .image{
-    width: 660px;
+    width: 600px;
     height: 200px;
     object-fit: cover;
     object-position: center;
 }
 h3{
     color: #087990;
+}
+@media(max-width:1440px){
+    .Content{
+        width: 1020px;
+    }
+    .image{
+        width: 300px;
+    }
+    .footer{
+        justify-content: space-around;
+    }
 }
