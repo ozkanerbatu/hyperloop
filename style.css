@@ -2,10 +2,13 @@ body {
     margin: 0;
     padding: 0;
     max-width: 1320px;
+    background-color: #087990;
 }
+
 section {
     padding-top: 2rem;
 }
+
 .header {
     position: fixed;
     top: 0;
@@ -15,7 +18,6 @@ section {
 
 .home {
     width: 100%;
-    background: #fff;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -24,11 +26,12 @@ section {
 
 .home-text {
     text-align: center;
-    color:#087990;
+    color: #fff;
 }
 
 .home-text span {
-    color:#087990; /*Daha sonra değiştirilebilir*/
+    color: #02132e;
+    /*Daha sonra değiştirilebilir*/
 }
 
 .home-title {
@@ -42,10 +45,11 @@ section {
     margin-top: 150px;
     margin-left: 2%;
     width: 100%;
+    
 }
 
 .tab-button {
-    color: #087990;
+    color: #fff;
     font-size: 1.5rem;
     text-decoration: none;
     font-weight: 600;
@@ -55,6 +59,8 @@ section {
     display: flex;
     justify-content: flex-start;
     margin: 2%;
+    background-color: #02132e;
+    color: #fff;
 }
 
 .footer {
@@ -70,53 +76,65 @@ section {
     height: 50px;
 }
 
-.progress-container{
+.progress-container {
     width: 50%;
 }
-.progress-text{
+
+.progress-text {
     text-align: center;
 }
-.progress-tool{
+
+.progress-tool {
     height: 25px;
 }
-.Content{
+
+.Content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 3px solid gray;/* Sizin içeriğinizi sığdırmanız gereken yeri belirlemek amacıyla yaptım */
     width: 1320px;
     height: 660px;
     padding: 2%;
-    
+
 }
-.photage-container{
+
+.photage-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 3px solid gray;
     display: flex;
     width: 100%;
     padding: 2%;
     margin-left: 2%;
+    background-color: #02132e;
+    
 
 }
-.image{
+
+.image {
     width: 600px;
     height: 200px;
     object-fit: cover;
     object-position: center;
 }
-h3{
-    color: #087990;
+
+h3 {
+    color: #fff;
 }
-@media(max-width:1440px){
-    .Content{
+.Tables{
+    color: #fff;
+}
+
+@media(max-width:1440px) {
+    .Content {
         width: 1020px;
     }
-    .image{
+
+    .image {
         width: 300px;
     }
-    .footer{
+
+    .footer {
         justify-content: space-around;
     }
 }
