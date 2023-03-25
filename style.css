@@ -45,7 +45,7 @@ section {
     margin-top: 150px;
     margin-left: 2%;
     width: 100%;
-    
+
 }
 
 .tab-button {
@@ -59,7 +59,6 @@ section {
     display: flex;
     justify-content: flex-start;
     margin: 2%;
-    background-color: #02132e;
     color: #fff;
 }
 
@@ -69,6 +68,7 @@ section {
     align-items: center;
     margin-left: 3%;
     width: 100%;
+    margin-bottom: 2%;
 }
 
 .stop-button {
@@ -95,6 +95,7 @@ section {
     width: 1320px;
     height: 660px;
     padding: 2%;
+    background-color: #02132e;
 
 }
 
@@ -106,8 +107,9 @@ section {
     width: 100%;
     padding: 2%;
     margin-left: 2%;
+    margin-right: 2%;
     background-color: #02132e;
-    
+
 
 }
 
@@ -121,20 +123,25 @@ section {
 h3 {
     color: #fff;
 }
-.Tables{
+
+.Tables {
     color: #fff;
 }
 
 @media(max-width:1440px) {
     .Content {
-        width: 1020px;
+        width: 960px;
     }
 
     .image {
-        width: 300px;
+        width: 320px;
     }
 
     .footer {
         justify-content: space-around;
+    }
+
+    .Tables {
+        width: 800px;
     }
 }
