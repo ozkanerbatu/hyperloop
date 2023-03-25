@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     margin: 0;
     padding: 0;
@@ -137,4 +138,145 @@ h3 {
     .footer {
         justify-content: space-around;
     }
+=======
+body {
+    margin: 0;
+    padding: 0;
+    max-width: 1320px;
+    background-color: #087990;
+}
+
+section {
+    padding-top: 2rem;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.home {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.home-text {
+    text-align: center;
+    color: #fff;
+}
+
+.home-text span {
+    color: #02132e;
+    /*Daha sonra değiştirilebilir*/
+}
+
+.home-title {
+    font-size: 3rem;
+
+}
+
+.tabs {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 150px;
+    margin-left: 2%;
+    width: 100%;
+    
+}
+
+.tab-button {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    margin: 2%;
+    background-color: #02132e;
+    color: #fff;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 3%;
+    width: 100%;
+}
+
+.stop-button {
+    width: 120px;
+    height: 50px;
+}
+
+.progress-container {
+    width: 50%;
+}
+
+.progress-text {
+    text-align: center;
+}
+
+.progress-tool {
+    height: 25px;
+}
+
+.Content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1320px;
+    height: 660px;
+    padding: 2%;
+
+}
+
+.photage-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    padding: 2%;
+    margin-left: 2%;
+    background-color: #02132e;
+    
+
+}
+
+.image {
+    width: 600px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+h3 {
+    color: #fff;
+}
+.Tables{
+    color: #fff;
+}
+
+@media(max-width:1440px) {
+    .Content {
+        width: 1020px;
+    }
+
+    .image {
+        width: 300px;
+    }
+
+    .footer {
+        justify-content: space-around;
+    }
+>>>>>>> c6adb7512c3e4329f5f8c2d418cff4ac9392b117
 }
