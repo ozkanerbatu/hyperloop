@@ -1,155 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <div class="header">
-        <section class="home" id="home"><!--Blog title-->
-            <div class="home-text">
-                <h2 class="home-title">Hyper<span>sonic</span> Kontrol <span>Panel</span></h2>
-            </div>
-        </section>
+      <section class="home" id="home">
+        <!--Blog title-->
+        <div class="home-text">
+          <h2 class="home-title">
+            Hyper<span>sonic</span> Kontrol <span>Panel</span>
+          </h2>
+        </div>
+      </section>
     </div>
     <div class="tabs">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active tab-button" id="home-tab" data-bs-toggle="tab"
-                    data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
-                    aria-selected="true">Tab1</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link tab-button" id="profile-tab" data-bs-toggle="tab"
-                    data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane"
-                    aria-selected="false">Tab2</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link tab-button" id="contact-tab" data-bs-toggle="tab"
-                    data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane"
-                    aria-selected="false">Tab3</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link tab-button" id="disabled-tab" data-bs-toggle="tab"
-                    data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane"
-                    aria-selected="false">Tab4</button>
-            </li>
-        </ul>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active tab-button"
+            id="home-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#home-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="home-tab-pane"
+            aria-selected="true"
+          >
+            Tab1
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link tab-button"
+            id="profile-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#profile-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="profile-tab-pane"
+            aria-selected="false"
+          >
+            Tab2
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link tab-button"
+            id="contact-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#contact-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="contact-tab-pane"
+            aria-selected="false"
+          >
+            Tab3
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link tab-button"
+            id="disabled-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#disabled-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="disabled-tab-pane"
+            aria-selected="false"
+          >
+            Tab4
+          </button>
+        </li>
+      </ul>
     </div>
     <div class="container">
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
-                tabindex="0">
-                <div class="Content">
-                    <div class="Tables">
-                        <table class="table">
-                            <thead>
-                                <tr class="Tables">
-                                    <th scope="col">Konum</th>
-                                    <th scope="col">Hız</th>
-                                    <th scope="col">İvme</th>
-                                    <th scope="col">Açı</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="Tables">
-                                    <th scope="row">X</th>
-                                    <td>Melike</td>
-                                    <td>Cihan</td>
-                                    <td>Elif</td>
-                                </tr>
-                                <tr class="Tables">
-                                    <th scope="row">Y</th>
-                                    <td>Berat The Great</td>
-                                    <td>Batuhan</td>
-                                    <td>Onur</td>
-                                </tr>
-                                <tr class="Tables">
-                                    <th scope="row">Z</th>
-                                    <td>Berat The Great</td>
-                                    <td>Batuhan</td>
-                                    <td>Onur</td>
-                                </tr>
-                            </tbody>
-                        </table>
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="home-tab-pane"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+          tabindex="0"
+        >
+          <div class="Content">
+            <div class="Tables">
+              <table class="table">
+                <thead>
+                  <tr class="Tables">
+                    <th scope="col">Konum</th>
+                    <th scope="col">Hız</th>
+                    <th scope="col">İvme</th>
+                    <th scope="col">Açı</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="Tables">
+                    <th scope="row">X</th>
+                    <td>Melike</td>
+                    <td>Cihan</td>
+                    <td>Elif</td>
+                  </tr>
+                  <tr class="Tables">
+                    <th scope="row">Y</th>
+                    <td>Berat The Great</td>
+                    <td>Batuhan</td>
+                    <td>Onur</td>
+                  </tr>
+                  <tr class="Tables">
+                    <th scope="row">Z</th>
+                    <td>Berat The Great</td>
+                    <td>Batuhan</td>
+                    <td>Onur</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="temperature">
+              <div class="de">
+                <div class="den">
+                  <div class="dene">
+                    <div class="denem">
+                      <div class="deneme">
+                        23<span>.9</span><strong>&deg;</strong>
+                      </div>
                     </div>
-                    <div class="temperature">
-                        <div class="de">
-                            <div class="den">
-                                <div class="dene">
-                                    <div class="denem">
-                                        <div class="deneme">
-                                            23<span>.9</span><strong>&deg;</strong>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="de">
-                            <div class="den">
-                                <div class="dene">
-                                    <div class="denem">
-                                        <div class="deneme">
-                                            23<span>.9</span><strong>&deg;</strong>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                  </div>
+                </div>
+              </div>
+              <div class="de">
+                <div class="den">
+                  <div class="dene">
+                    <div class="denem">
+                      <div class="deneme">
+                        23<span>.9</span><strong>&deg;</strong>
+                      </div>
                     </div>
-                    <div class="powerbar">
-                        <div class="power-bar" data-content="55%">
-                        </div>
-                        <div class="power-bar" data-content="55%">
-                            <h3>Güç kaynağı 2</h3>
-                        </div>
-                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                <div class="Content">
-                    <p>İyiyim sen</p>
-                </div>
+            <div class="powerbar">
+              <div class="power-bar" data-content="55%"></div>
+              <div class="power-bar" data-content="55%">
+                <h3>Güç kaynağı 2</h3>
+              </div>
             </div>
-            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                <div class="Content">
-                    <p>iyiyim</p>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
-                tabindex="0">
-                <div class="Content">
-                    <p>Berat Harika</p>
-                </div>
-            </div>
+          </div>
         </div>
-        <div class="photage-container">
-            <h3>Ekran 1</h3>
-            <img src="hyperloop.image.jpg" alt="" class="image">
-            <h3>Ekran 2</h3>
-            <img src="hyperloop.image2.jfif" alt="" class="image">
+        <div
+          class="tab-pane fade"
+          id="profile-tab-pane"
+          role="tabpanel"
+          aria-labelledby="profile-tab"
+          tabindex="0"
+        >
+          <div class="Content">
+            <p>İyiyim sen</p>
+          </div>
         </div>
+        <div
+          class="tab-pane fade"
+          id="contact-tab-pane"
+          role="tabpanel"
+          aria-labelledby="contact-tab"
+          tabindex="0"
+        >
+          <div class="Content">
+            <p>iyiyim</p>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="disabled-tab-pane"
+          role="tabpanel"
+          aria-labelledby="disabled-tab"
+          tabindex="0"
+        >
+          <div class="Content">
+            <p>Berat Harika</p>
+          </div>
+        </div>
+      </div>
+      <div class="photage-container">
+        <h3>Ekran 1</h3>
+        <img src="./assets/hyperloop.image.jpg" alt="" class="image" />
+        <h3>Ekran 2</h3>
+        <img src="./assets/hyperloop.image2.jfif" alt="" class="image" />
+      </div>
     </div>
     <div class="footer">
-        <button type="button" class="btn btn-danger stop-button">Dur!</button>
-        <div class="progress-container">
-            <h3 class="progress-text">Güncel ilerleyiş</h3>
-            <div class="progress progress-tool" role="progressbar" aria-label="Info example" aria-valuenow="50"
-                aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar bg-info text-dark progress-inline" style="width: 50%">50%</div>
-            </div>
+      <button id="stop" type="button" class="btn btn-danger stop-button">
+        Dur!
+      </button>
+      <div class="progress-container">
+        <h3 class="progress-text">Güncel ilerleyiş</h3>
+        <div class="progress">
+          <div
+            id="progress"
+            class="progress-bar"
+            role="progressbar"
+            style="width: 25%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            25%
+          </div>
         </div>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-        </script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script>
+      //let $ = require("jquery")
+      const progress = () => {
+        let i = 0;
+        let interval = setInterval(() => {
+          if (i == 100) {
+            clearInterval(interval);
+          }
+          $("#progress")
+            .css("width", i + "%")
+            .attr("aria-valuenow", i)
+            .text(i + "%");
+          i++;
+        }, 100);
+      };
+      $("#stop").click(() => {
+        progress();
+      });
+    </script>
+  </body>
 </html>
