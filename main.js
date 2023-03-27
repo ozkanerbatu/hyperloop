@@ -2,8 +2,8 @@ const { app, BrowserWindow } = require('electron')
 const electron = require('electron')
 const path = require('path')
 
-function createWindow () {
-  const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
+function createWindow() {
+  const { width, height } = electron.screen.getPrimaryDisplay().workAreaSize
   const win = new BrowserWindow({
     width: width,
     height: height,
