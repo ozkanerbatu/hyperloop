@@ -150,51 +150,16 @@ h1 {
     flex-direction: row;
     justify-content: space-around;
 }
-
-.powerbar {
+.powerbar-container{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
-
-.power-bar * {
-    position: absolute;
+.powerbar {
+    width: 45%;
 }
-
-.power-bar {
-    font-size: 3rem;
-    height: 75px;
-    width: 300px;
-    transform: translate(-50%, -50%);
-    filter: drop-shadow(0 0 10px rgb(90 20 20));
-    padding-left: 150px;
-    padding-top: 25px;
-}
-
-.power-bar:before,
-.power-bar:after {
-    padding: 10px 0;
-    text-indent: 120px;
-    position: absolute;
-    white-space: nowrap;
-    overflow: hidden;
-    content: attr(data-content);
-    height: 100%;
-}
-
-.power-bar:before {
-    background-color: #fff;
-    color: rgb(90 20 20);
-    width: 100%;
-    border-radius: 10px;
-}
-
-.power-bar:after {
-    background-color: rgb(90 20 20);
-    color: #fff;
-    width: 55%;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+.powerbar2{
+    width: 45%;
 }
 
 .GaugeMeter {
