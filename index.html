@@ -129,6 +129,7 @@
   <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
     crossorigin="anonymous"></script>
   <script src="Plugin/GaugeMeter.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
   <script>
     $(document).ready(function () {
       $(".GaugeMeter").gaugeMeter();
@@ -152,6 +153,16 @@
     $("#start").click(() => {
       progress();
     });
+  </script>
+  <script>
+    const socket = io();
+    socket.on("connect", () => {
+      console.log("Connected to server");
+    });
+    socket.on("disconnect", () => {
+      console.log("Disconnected from server");
+    });
+
   </script>
 </body>
 
