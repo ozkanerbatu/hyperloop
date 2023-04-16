@@ -172,7 +172,7 @@
           .attr("aria-valuenow", i)
           .text(i + "%");
         i--;
-      }, 0);
+      }, 100);
     };
     const progress3 = () => {
       let i = 100;
@@ -185,7 +185,7 @@
           .attr("aria-valuenow", i)
           .text(i + "%");
         i--;
-      }, 0);
+      }, 100);
     };
     $("#start").click(() => {
       progress();
@@ -194,5 +194,4 @@
     });
   </script>
 </body>
-
 </html>

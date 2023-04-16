@@ -204,10 +204,16 @@ h1 {
 @media(max-width:1440px) {
     .Content {
         width: 900px;
+        height: 600px;
     }
 
     .image {
         width: 400px;
+    }
+    .home-title {
+        font-size: 3rem;
+        font-weight: 1000;
+    
     }
 }
 
