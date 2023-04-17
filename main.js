@@ -6,7 +6,7 @@ const path = require("path");
 function createWindow() {
   const { width, height } = electron.screen.getPrimaryDisplay().workAreaSize;
   const win = new BrowserWindow({
-    width: width,
+    width: width-100,
     height: height,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),

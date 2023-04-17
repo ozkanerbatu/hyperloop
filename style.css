@@ -56,6 +56,7 @@ section {
     justify-content: flex-start;
     margin: 1%;
     color: #fff;
+    width: 100%;
 }
 
 .footer {
@@ -110,7 +111,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 1320px;
+    width: 1250px;
     height: 700px;
     padding: 2%;
     background-color: #02132e;
@@ -130,7 +131,7 @@ section {
 }
 
 .image {
-    width: 600px;
+    width: 500px;
     height: 200px;
     object-fit: cover;
     object-position: center;
@@ -198,31 +199,4 @@ h1 {
     Color: #fff;
     Font-Weight: 300;
     Font-Size: 1.25em;
-}
-
-@media(max-width:1440px) {
-    .Content {
-        width: 800px;
-        height: 500px;
-    }
-
-    .image {
-        width: 400px;
-    }
-    .home-title {
-        font-size: 3rem;
-        font-weight: 1000;
-    
-    }
-}
-
-@media(max-width:1024px) {
-    .Content {
-        width: 600px;
-        height: 400px;
-    }
-
-    .image {
-        width: 300px;
-    }
 }
