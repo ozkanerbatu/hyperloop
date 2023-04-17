@@ -169,21 +169,21 @@
   <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
     crossorigin="anonymous"></script>
   <script src="Plugin/GaugeMeter.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
+  <script src="http://localhost:3000/socket.io/socket.io.js"></script>
   <script>
     $(document).ready(function () {
       $(".GaugeMeter").gaugeMeter();
     });
   </script>
   <script>
-    const socket = io();
+    const socket = io("http://localhost:3000");
     socket.on("connect", () => {
       console.log("Connected to server");
     });
     socket.on("disconnect", () => {
       console.log("Disconnected from server");
     });
-    socket.on("electronicBatarya", (data) => {
+   socket.on("electronicBatarya", (data) => {
       let i = data||100;
         $("#electronicBatarya")
           .css("width", i + "%")
@@ -198,6 +198,7 @@
           .text(i + "%");
     })
     socket.on("levitasyonBatarya", (data) => {
+      console.log("levitasyonBatarya",data)
       let i = data||100;
         $("#levitasyonBatarya")
           .css("width", i + "%")
