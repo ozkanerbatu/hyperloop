@@ -150,18 +150,17 @@ h1 {
     flex-direction: row;
     justify-content: space-around;
 }
-.powerbar-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.powerbar {
-    width: 45%;
-}
-.powerbar2{
-    width: 45%;
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-evenly;
+    
 }
 
+.powerbar {
+    width: 300px;
+    margin-top: 12.5%;
+}
 .GaugeMeter {
     Position: Relative;
     Text-Align: Center;
@@ -203,8 +202,8 @@ h1 {
 
 @media(max-width:1440px) {
     .Content {
-        width: 900px;
-        height: 600px;
+        width: 800px;
+        height: 500px;
     }
 
     .image {
@@ -219,7 +218,8 @@ h1 {
 
 @media(max-width:1024px) {
     .Content {
-        width: 700px;
+        width: 600px;
+        height: 400px;
     }
 
     .image {
