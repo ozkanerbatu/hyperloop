@@ -36,8 +36,9 @@
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
-          type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Tab3</button>
+        <button class="nav-link tab-button" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+          type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+          Tab3</button>
       </li>
     </ul>
   </div>
@@ -50,11 +51,11 @@
               data-append="C" data-size="200px" data-style="Semi" data-width="5" data-text_size="0.30"
               data-theme="LightRed-DarkRed" data-label_color="#fff">
             </div>
-            <div class="GaugeMeter" id="GaugeMeter_1 itkiSıcaklığ" data-style="Full" data-percent="75"
+            <div class="GaugeMeter" id="GaugeMeter_1 itkiSıcaklığı" data-style="Full" data-percent="75"
               data-label="Sıcaklık 2" data-size="200px" data-width="5" data-text_size="0.30" data-append="C"
               data-theme="LightRed-DarkRed" data-label_color="#fff">
             </div>
-            <div class="GaugeMeter" id="GaugeMeter_1 ortamSıacklığı" data-style="Full" data-percent="75"
+            <div class="GaugeMeter" id="GaugeMeter_1 ortamSıacklığı" data-style="Full" data-percent="50"
               data-label="Sıcaklık 2" data-size="200px" data-width="5" data-text_size="0.30" data-append="C"
               data-theme="LightRed-DarkRed" data-label_color="#fff">
             </div>
@@ -175,81 +176,6 @@
     });
   </script>
   <script>
-    //let $ = require("jquery")
-    const progress = () => {
-      let i = 0;
-      let interval = setInterval(() => {
-        if (i == 100) {
-          clearInterval(interval);
-        }
-        $("#progress")
-          .css("width", i + "%")
-          .attr("aria-valuenow", i)
-          .text(i + "%");
-        i++;
-      }, 100);
-    };
-    const progress2 = () => {
-      let i = 100;
-      let interval = setInterval(() => {
-        if (i == 0) {
-          clearInterval(interval);
-        }
-        $("#levitasyonBatarya")
-          .css("width", i + "%")
-          .attr("aria-valuenow", i)
-          .text(i + "%");
-        i--;
-      }, 100);
-    };
-    const progress3 = () => {
-      let i = 100;
-      let interval = setInterval(() => {
-        if (i == 0) {
-          clearInterval(interval);
-        }
-        $("#itkiBatarya")
-          .css("width", i + "%")
-          .attr("aria-valuenow", i)
-          .text(i + "%");
-        i--;
-      }, 100);
-    };
-    const progress4 = () => {
-      let i = 100;
-      let interval = setInterval(() => {
-        if (i == 0) {
-          clearInterval(interval);
-        }
-        $("#electronicBatarya")
-          .css("width", i + "%")
-          .attr("aria-valuenow", i)
-          .text(i + "%");
-        i--;
-      }, 100);
-    };
-    const progress5 = () => {
-      let i = 100;
-      let interval = setInterval(() => {
-        if (i == 0) {
-          clearInterval(interval);
-        }
-        $("#motorSürücüBatarya")
-          .css("width", i + "%")
-          .attr("aria-valuenow", i)
-          .text(i + "%");
-        i--;
-      }, 100);
-    };
-    $("#start").click(() => {
-      progress();
-      progress2();
-      progress3();
-      progress4();
-      progress5();
-    });
-  </script>
-  <script>
     const socket = io();
     socket.on("connect", () => {
       console.log("Connected to server");
@@ -258,101 +184,53 @@
       console.log("Disconnected from server");
     });
     socket.on("electronicBatarya", (data) => {
-      let i = data;
-      let interval = setInterval(() => {
-        if (i == 0) {
-          clearInterval(interval);
-        }
+      let i = data||100;
         $("#electronicBatarya")
           .css("width", i + "%")
           .attr("aria-valuenow", i)
           .text(i + "%");
-        i--;
-      }, 100);
     })
     socket.on("motorSürücüBatarya", (data) => {
-      let i = data;
-      let interval = setInterval(() => {
-        if (i == 0) {
-          clearInterval(interval);
-        }
-        $("#motorSürücüBatarya")
+      let i = data||100;
+        $("motorSürücüBatarya")
           .css("width", i + "%")
           .attr("aria-valuenow", i)
           .text(i + "%");
-        i--;
-      }, 100);
     })
     socket.on("levitasyonBatarya", (data) => {
-      let i = data;
-      let interval = setInterval(() => {
-        if (i == 0) {
-          clearInterval(interval);
-        }
+      let i = data||100;
         $("#levitasyonBatarya")
           .css("width", i + "%")
           .attr("aria-valuenow", i)
           .text(i + "%");
-        i--;
-      }, 100);
-
     })
     socket.on("itkiBatarya", (data) => {
-      let i = data;
-      let interval = setInterval(() => {
-        if (i == 0) {
-          clearInterval(interval);
-        }
+      let i = data||100;
         $("#itkiBatarya")
           .css("width", i + "%")
           .attr("aria-valuenow", i)
           .text(i + "%");
-        i--;
-      }, 100);
-
-
     })
-    socket.on("ortamSıacklığı", (data) => {
-      let i = data;
-      let interval = setInterval(() => {
-        if (i == 0) {
-          clearInterval(interval);
-        }
+    socket.on("ortamSıcaklığı", (data) => {
+      let i = data||100;
         $("#ortamSıacklığı")
           .css("width", i + "%")
           .attr("aria-valuenow", i)
           .text(i + "%");
-        i--;
-      }, 100);
-
     })
     socket.on("itkiSıcaklığı", (data) => {
-      let i = data;
-      let interval = setInterval(() => {
-        if (i == 0) {
-          clearInterval(interval);
-        }
+      let i = data||100;
         $("#itkiSıcaklığı")
           .css("width", i + "%")
           .attr("aria-valuenow", i)
           .text(i + "%");
-        i--;
-      }, 100);
-
     })
     socket.on("levitasyonSıcaklığı", (data) => {
-      let i = data;
-      let interval = setInterval(() => {
-        if (i == 0) {
-          clearInterval(interval);
-        }
+      let i = data||100;
         $("#evitasyonSıcaklığı")
           .css("width", i + "%")
           .attr("aria-valuenow", i)
           .text(i + "%");
-        i--;
-      }, 100);
-
     })
   </script>
 </body>
