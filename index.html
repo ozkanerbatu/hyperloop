@@ -41,6 +41,58 @@
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
         <div class="Content">
+          <div class="temperature">
+            <div class="GaugeMeter" id="GaugeMeter_1 levitasyonSıcaklığı" data-percent="20" data-label="Sıcaklık 1"
+              data-append="C" data-size="200px" data-style="Semi" data-width="5" data-text_size="0.30"
+              data-theme="LightRed-DarkRed" data-label_color="#fff">
+            </div>
+            <div class="GaugeMeter" id="GaugeMeter_1 itkiSıcaklığ" data-style="Full" data-percent="75"
+              data-label="Sıcaklık 2" data-size="200px" data-width="5" data-text_size="0.30" data-append="C"
+              data-theme="LightRed-DarkRed" data-label_color="#fff">
+            </div>
+            <div class="GaugeMeter" id="GaugeMeter_1 ortamSıacklığı" data-style="Full" data-percent="75"
+              data-label="Sıcaklık 2" data-size="200px" data-width="5" data-text_size="0.30" data-append="C"
+              data-theme="LightRed-DarkRed" data-label_color="#fff">
+            </div>
+          </div>
+          <div class="powerbar-container grid-container">
+            <div class="powerbar">
+              <h3 class="progress-text">Elektronik Bataryası</h3>
+              <div class="progress">
+                <div id="electronicBatarya" class="progress-bar bg-danger" role="progressbar" style="width: 100%;"
+                  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%
+                </div>
+              </div>
+            </div>
+            <div class="powerbar">
+              <h3 class="progress-text">İtki Bataryası</h3>
+              <div class="progress">
+                <div id="itkiBatarya" class="progress-bar bg-danger" role="progressbar" style="width: 100%;"
+                  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%
+                </div>
+              </div>
+            </div>
+            <div class="powerbar">
+              <h3 class="progress-text">Motor Sürücü Bataryas</h3>
+              <div class="progress">
+                <div id="motorSürücüBatarya" class="progress-bar bg-danger" role="progressbar" style="width: 100%;"
+                  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%
+                </div>
+              </div>
+            </div>
+            <div class="powerbar">
+              <h3 class="progress-text">Levitasyon Bataryası</h3>
+              <div class="progress">
+                <div id="levitasyonBatarya" class="progress-bar bg-danger" role="progressbar" style="width: 100%;"
+                  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+        <div class="Content">
           <div class="Tables">
             <table class="table">
               <thead>
@@ -73,55 +125,6 @@
               </tbody>
             </table>
           </div>
-          <div class="temperature">
-            <div class="GaugeMeter" id="GaugeMeter_1" data-percent="20" data-label="Sıcaklık 1" data-append="C"
-              data-size="200px" data-style="Semi" data-width="5" data-text_size="0.30" data-theme="LightRed-DarkRed"
-              data-label_color="#fff">
-            </div>
-            <div class="GaugeMeter" id="GaugeMeter_1" data-style="Full" data-percent="75" data-label="Sıcaklık 2"
-              data-size="200px" data-width="5" data-text_size="0.30" data-append="C" data-theme="LightRed-DarkRed"
-              data-label_color="#fff">
-            </div>
-          </div>
-          <div class="powerbar-container grid-container">
-            <div class="powerbar">
-              <h3 class="progress-text">Elektronik Bataryası</h3>
-              <div class="progress">
-                <div id="progress2" class="progress-bar bg-danger" role="progressbar" style="width: 100%;"
-                  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%
-                </div>
-              </div>
-            </div>
-            <div class="powerbar">
-              <h3 class="progress-text">İtki Bataryası</h3>
-              <div class="progress">
-                <div id="progress3" class="progress-bar bg-danger" role="progressbar" style="width: 100%;"
-                  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%
-                </div>
-              </div>
-            </div>
-            <div class="powerbar">
-              <h3 class="progress-text">Motor Sürücü Bataryas</h3>
-              <div class="progress">
-                <div id="progress4" class="progress-bar bg-danger" role="progressbar" style="width: 100%;"
-                  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%
-                </div>
-              </div>
-            </div>
-            <div class="powerbar">
-              <h3 class="progress-text">Levitasyon Bataryası</h3>
-              <div class="progress">
-                <div id="progress5" class="progress-bar bg-danger" role="progressbar" style="width: 100%;"
-                  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-        <div class="Content">
-          <p>Berat The Great</p>
         </div>
       </div>
     </div>
@@ -184,7 +187,7 @@
         if (i == 0) {
           clearInterval(interval);
         }
-        $("#progress2")
+        $("#levitasyonBatarya")
           .css("width", i + "%")
           .attr("aria-valuenow", i)
           .text(i + "%");
@@ -197,7 +200,7 @@
         if (i == 0) {
           clearInterval(interval);
         }
-        $("#progress3")
+        $("#itkiBatarya")
           .css("width", i + "%")
           .attr("aria-valuenow", i)
           .text(i + "%");
@@ -210,7 +213,7 @@
         if (i == 0) {
           clearInterval(interval);
         }
-        $("#progress4")
+        $("#electronicBatarya")
           .css("width", i + "%")
           .attr("aria-valuenow", i)
           .text(i + "%");
@@ -223,7 +226,7 @@
         if (i == 0) {
           clearInterval(interval);
         }
-        $("#progress5")
+        $("#motorSürücüBatarya")
           .css("width", i + "%")
           .attr("aria-valuenow", i)
           .text(i + "%");
@@ -246,25 +249,101 @@
     socket.on("disconnect", () => {
       console.log("Disconnected from server");
     });
-    socket.on("electronicBatarya",()=>{
+    socket.on("electronicBatarya", (data) => {
+      let i = data;
+      let interval = setInterval(() => {
+        if (i == 0) {
+          clearInterval(interval);
+        }
+        $("#electronicBatarya")
+          .css("width", i + "%")
+          .attr("aria-valuenow", i)
+          .text(i + "%");
+        i--;
+      }, 100);
+    })
+    socket.on("motorSürücüBatarya", (data) => {
+      let i = data;
+      let interval = setInterval(() => {
+        if (i == 0) {
+          clearInterval(interval);
+        }
+        $("#motorSürücüBatarya")
+          .css("width", i + "%")
+          .attr("aria-valuenow", i)
+          .text(i + "%");
+        i--;
+      }, 100);
+    })
+    socket.on("levitasyonBatarya", (data) => {
+      let i = data;
+      let interval = setInterval(() => {
+        if (i == 0) {
+          clearInterval(interval);
+        }
+        $("#levitasyonBatarya")
+          .css("width", i + "%")
+          .attr("aria-valuenow", i)
+          .text(i + "%");
+        i--;
+      }, 100);
 
     })
-    socket.on("motorSürücüBatarya",()=>{
+    socket.on("itkiBatarya", (data) => {
+      let i = data;
+      let interval = setInterval(() => {
+        if (i == 0) {
+          clearInterval(interval);
+        }
+        $("#itkiBatarya")
+          .css("width", i + "%")
+          .attr("aria-valuenow", i)
+          .text(i + "%");
+        i--;
+      }, 100);
+
 
     })
-    socket.on("levitasyonBatarya",()=>{
+    socket.on("ortamSıacklığı", (data) => {
+      let i = data;
+      let interval = setInterval(() => {
+        if (i == 0) {
+          clearInterval(interval);
+        }
+        $("#ortamSıacklığı")
+          .css("width", i + "%")
+          .attr("aria-valuenow", i)
+          .text(i + "%");
+        i--;
+      }, 100);
 
     })
-    socket.on("itkiBatarya",()=>{
+    socket.on("itkiSıcaklığı", (data) => {
+      let i = data;
+      let interval = setInterval(() => {
+        if (i == 0) {
+          clearInterval(interval);
+        }
+        $("#itkiSıcaklığı")
+          .css("width", i + "%")
+          .attr("aria-valuenow", i)
+          .text(i + "%");
+        i--;
+      }, 100);
 
     })
-    socket.on("ortamSıacklığı",()=>{
-
-    })
-    socket.on("itkiSıcaklığı",()=>{
-
-    })
-    socket.on("levitasyonSıcaklığı",()=>{
+    socket.on("levitasyonSıcaklığı", (data) => {
+      let i = data;
+      let interval = setInterval(() => {
+        if (i == 0) {
+          clearInterval(interval);
+        }
+        $("#evitasyonSıcaklığı")
+          .css("width", i + "%")
+          .attr("aria-valuenow", i)
+          .text(i + "%");
+        i--;
+      }, 100);
 
     })
   </script>
