@@ -47,16 +47,16 @@
       <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
         <div class="Content">
           <div class="temperature">
-            <div class="GaugeMeter" id="GaugeMeter_1 levitasyonSıcaklığı" data-percent="20" data-label="Sıcaklık 1"
-              data-append="C" data-size="200px" data-style="Semi" data-width="5" data-text_size="0.30"
-              data-theme="LightRed-DarkRed" data-label_color="#fff">
+            <div class="GaugeMeter" id="GaugeMeter_1 levitasyonSıcaklığı" data-percent="20"
+              data-label="Levitasyon Sıcaklığı" data-append="C" data-size="200px" data-style="Semi" data-width="5"
+              data-text_size="0.30" data-theme="LightRed-DarkRed" data-label_color="#fff">
             </div>
             <div class="GaugeMeter" id="GaugeMeter_1 itkiSıcaklığı" data-style="Full" data-percent="75"
-              data-label="Sıcaklık 2" data-size="200px" data-width="5" data-text_size="0.30" data-append="C"
+              data-label="İtki Sıcaklığı" data-size="200px" data-width="5" data-text_size="0.30" data-append="C"
               data-theme="LightRed-DarkRed" data-label_color="#fff">
             </div>
             <div class="GaugeMeter" id="GaugeMeter_1 ortamSıacklığı" data-style="Full" data-percent="50"
-              data-label="Sıcaklık 2" data-size="200px" data-width="5" data-text_size="0.30" data-append="C"
+              data-label="Ortam Sıcaklığı" data-size="200px" data-width="5" data-text_size="0.30" data-append="C"
               data-theme="LightRed-DarkRed" data-label_color="#fff">
             </div>
           </div>
@@ -183,55 +183,49 @@
     socket.on("disconnect", () => {
       console.log("Disconnected from server");
     });
-   socket.on("electronicBatarya", (data) => {
-      let i = data||100;
-        $("#electronicBatarya")
-          .css("width", i + "%")
-          .attr("aria-valuenow", i)
-          .text(i + "%");
+    socket.on("electronicBatarya", (data) => {
+      let i = data || 100;
+      $("#electronicBatarya")
+        .css("width", i + "%")
+        .attr("aria-valuenow", i)
+        .text(i + "%");
     })
     socket.on("motorSürücüBatarya", (data) => {
-      let i = data||100;
-        $("motorSürücüBatarya")
-          .css("width", i + "%")
-          .attr("aria-valuenow", i)
-          .text(i + "%");
+      let i = data || 100;
+      $("motorSürücüBatarya")
+        .css("width", i + "%")
+        .attr("aria-valuenow", i)
+        .text(i + "%");
     })
     socket.on("levitasyonBatarya", (data) => {
-      console.log("levitasyonBatarya",data)
-      let i = data||100;
-        $("#levitasyonBatarya")
-          .css("width", i + "%")
-          .attr("aria-valuenow", i)
-          .text(i + "%");
+      console.log("levitasyonBatarya", data)
+      let i = data || 100;
+      $("#levitasyonBatarya")
+        .css("width", i + "%")
+        .attr("aria-valuenow", i)
+        .text(i + "%");
     })
     socket.on("itkiBatarya", (data) => {
-      let i = data||100;
-        $("#itkiBatarya")
-          .css("width", i + "%")
-          .attr("aria-valuenow", i)
-          .text(i + "%");
+      let i = data || 100;
+      $("#itkiBatarya")
+        .css("width", i + "%")
+        .attr("aria-valuenow", i)
+        .text(i + "%");
     })
     socket.on("ortamSıcaklığı", (data) => {
-      let i = data||100;
-        $("#ortamSıacklığı")
-          .css("width", i + "%")
-          .attr("aria-valuenow", i)
-          .text(i + "%");
+      let i = data || 100;
+      $("#ortamSıacklığı")
+        .attr("data-percent", i)
     })
     socket.on("itkiSıcaklığı", (data) => {
-      let i = data||100;
-        $("#itkiSıcaklığı")
-          .css("width", i + "%")
-          .attr("aria-valuenow", i)
-          .text(i + "%");
+      let i = data || 100;
+      $("#itkiSıcaklığı")
+        .attr("data-percent", i)
     })
     socket.on("levitasyonSıcaklığı", (data) => {
-      let i = data||100;
-        $("#evitasyonSıcaklığı")
-          .css("width", i + "%")
-          .attr("aria-valuenow", i)
-          .text(i + "%");
+      let i = data || 100;
+      $("#levitasyonSıcaklığı")
+        .attr("data-percent", i)
     })
   </script>
 </body>
