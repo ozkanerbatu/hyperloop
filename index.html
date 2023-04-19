@@ -104,22 +104,22 @@
                 </thead>
                 <tbody class="table-underline">
                   <tr class="table-underline">
-                    <td scope="row">X:116m</td>
-                    <td>X:56km/h</td>
-                    <td>X:24km/h²</td>
-                    <td>X:0</td>
+                    <td scope="row" id="konum_x">X:0</td>
+                    <td id="hız_x">X:0km/h</td>
+                    <td id="ivme_x">X:24km/h²</td>
+                    <td id="açı_x">X:0</td>
                   </tr>
                   <tr class="table-underline">
-                    <td scope="row">Y:0</td>
-                    <td>Y:1km/h</td>
-                    <td>Y:0</td>
-                    <td>Y:0</td>
+                    <td scope="row" id="konum_y">Y:0</td>
+                    <td id="hız_y">Y:0km/h</td>
+                    <td id="ivme_y">Y:0km/h²</td>
+                    <td id="açı_y">Y:0</td>
                   </tr>
                   <tr class="table-underline">
-                    <td scope="row">Z:0</td>
-                    <td>Z:0</td>
-                    <td>Z:0</td>
-                    <td>Z:0</td>
+                    <td scope="row" id="konum_z">Z:0</td>
+                    <td id="hız_z">Z:0km/h</td>
+                    <td id="ivme_z">Z:0km/h²</td>
+                    <td id="açı_z">Z:0</td>
                   </tr>
                 </tbody>
               </table>
@@ -219,6 +219,38 @@
       let i = data || 100;
       $("#levitasyonSıcaklığı")
         .attr("data-percent", i)
+    })
+    socket.on("hız", (data) => {
+      let x = data.hız_x
+      let y = data.hız_y
+      let z = data.hız_z
+      $("hız_x").text(data)
+      $("hız_y").text(data)
+      $("hız_z").text(data)
+    })
+    socket.on("ivme", (data) => {
+      let x = data.ivme_x
+      let y = data.ivme_y
+      let z = data.ivme_z
+      $("ivme_x").text(data)
+      $("ivme_y").text(data)
+      $("ivme_z").text(data)
+    })
+    socket.on("açı", (data) => {
+      let x = data.açı_x
+      let y = data.açı_y
+      let z = data.açı_z
+      $("açı_x").text(data)
+      $("açı_y").text(data)
+      $("açı_z").text(data)
+    })
+    socket.on("konum", (data) => {
+      let x = data.konum_x
+      let y = data.konum_y
+      let z = data.konum_z
+      $("konum_x").text(data)
+      $("konum_y").text(data)
+      $("konum_z").text(data)
     })
   </script>
 </body>
