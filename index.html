@@ -163,16 +163,17 @@
   <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
     crossorigin="anonymous"></script>
   <script src="Plugin/GaugeMeter.js"></script>
-  <script src="http://192.168.1.39:3000/socket.io/socket.io.js"></script>
+  <script src="http://192.168.79.207:3000/socket.io/socket.io.js"></script>
   <script>
     $(document).ready(function () {
       $(".GaugeMeter").gaugeMeter();
     });
   </script>
   <script>
-    const socket = io("http://192.168.1.39:3000");
+    const socket = io("http://192.168.79.207:3000");
     socket.on("connected", (data) => {
       console.log("Connected to server",data);
+      socket.emit("client_id",data);
     });
     socket.on("disconnect", () => {
       console.log("Disconnected from server");
@@ -221,12 +222,14 @@
           .text(i + "%");
     })
     socket.on("levitasyonSıcaklığı", (data) => {
-      console.log("levitasyonSıcaklığı",data)
       let i = data||0;
         $("#evitasyonSıcaklığı")
           .css("width", i + "%")
           .attr("aria-valuenow", i)
           .text(i + "%");
+    })
+    socket.on("hiz", (data) => {
+      console.log("hiz",data)
     })
   </script>
 </body>
