@@ -58,7 +58,7 @@
             </div>
             <div class="powerbar-container grid-container">
               <div class="powerbar">
-                <h3 class="progress-text">Elektronik Bataryası</h3>
+                <h4 class="progress-text">Elektronik Bataryası</h4>
                 <div class="progress">
                   <div id="electronicBatarya" class="progress-bar bg-danger" role="progressbar" style="width: 100%;"
                     aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%
@@ -66,7 +66,7 @@
                 </div>
               </div>
               <div class="powerbar">
-                <h3 class="progress-text">İtki Bataryası</h3>
+                <h4 class="progress-text">İtki Bataryası</h4>
                 <div class="progress">
                   <div id="itkiBatarya" class="progress-bar bg-danger" role="progressbar" style="width: 100%;"
                     aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%
@@ -74,7 +74,7 @@
                 </div>
               </div>
               <div class="powerbar">
-                <h3 class="progress-text">Motor Sürücü Bataryası</h3>
+                <h4 class="progress-text">Motor Sürücü Bataryası</h4>
                 <div class="progress">
                   <div id="motorSürücüBatarya" class="progress-bar bg-danger" role="progressbar" style="width: 100%;"
                     aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%
@@ -82,7 +82,7 @@
                 </div>
               </div>
               <div class="powerbar">
-                <h3 class="progress-text">Levitasyon Bataryası</h3>
+                <h4 class="progress-text">Levitasyon Bataryası</h4>
                 <div class="progress">
                   <div id="levitasyonBatarya" class="progress-bar bg-danger" role="progressbar" style="width: 100%;"
                     aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%
@@ -105,21 +105,21 @@
                 <tbody class="table-underline">
                   <tr class="table-underline">
                     <td scope="row" id="konum_x">X:0</td>
-                    <td id="hız_x">X:0km/h</td>
-                    <td id="ivme_x">X:24km/h²</td>
-                    <td id="açı_x">X:0</td>
+                    <td id="gx">hız_x</td>
+                    <td id="ivme_x">ivme_x</td>
+                    <td id="açı_x">açı_x</td>
                   </tr>
                   <tr class="table-underline">
                     <td scope="row" id="konum_y">Y:0</td>
-                    <td id="hız_y">Y:0km/h</td>
-                    <td id="ivme_y">Y:0km/h²</td>
-                    <td id="açı_y">Y:0</td>
+                    <td id="gy">hız_y</td>
+                    <td id="ivme_y">ivme_y</td>
+                    <td id="açı_y">açı_y</td>
                   </tr>
                   <tr class="table-underline">
                     <td scope="row" id="konum_z">Z:0</td>
-                    <td id="hız_z">Z:0km/h</td>
-                    <td id="ivme_z">Z:0km/h²</td>
-                    <td id="açı_z">Z:0</td>
+                    <td id="gz">hız_z</td>
+                    <td id="ivme_z">ivme_z</td>
+                    <td id="açı_z">açı_z</td>
                   </tr>
                 </tbody>
               </table>
@@ -151,8 +151,8 @@
     <div class="progress-container">
       <h3 class="progress-text">Güncel ilerleyiş</h3>
       <div class="progress">
-        <div id="progress" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0"
-          aria-valuemax="100">
+        <div id="progress" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="10%"
+          aria-valuemin="0" aria-valuemax="100">
           0%
         </div>
       </div>
@@ -164,73 +164,94 @@
   <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
     crossorigin="anonymous"></script>
   <script src="Plugin/GaugeMeter.js"></script>
-  <script src="http://192.168.79.207:3000/socket.io/socket.io.js"></script>
+  <script src="http://192.168.79.44:3000/socket.io/socket.io.js"></script>
   <script>
     $(document).ready(function () {
       $(".GaugeMeter").gaugeMeter();
     });
   </script>
   <script>
-    const socket = io("http://192.168.79.207:3000");
+    const socket = io("http://192.168.79.44:3000");
     socket.on("connected", (data) => {
-      console.log("Connected to server",data);
-      socket.emit("client_id",data);
+      console.log("Connected to server", data);
+      socket.emit("client_id", data);
     });
     socket.on("disconnect", () => {
       console.log("Disconnected from server");
     });
     socket.on("electronicBatarya", (data) => {
-      let i = data || 0;
       $("#electronicBatarya")
-        .css("width", i + "%")
-        .attr("aria-valuenow", i)
-        .text(i + "%");
+        .css("width", data + "%")
+        .attr("aria-valuenow", data)
+        .text(data + "%");
     })
     socket.on("motorSürücüBatarya", (data) => {
-      let i = data || 0;
       $("motorSürücüBatarya")
-        .css("width", i + "%")
-        .attr("aria-valuenow", i)
-        .text(i + "%");
+        .css("width", data + "%")
+        .attr("aria-valuenow", data)
+        .text(data + "%");
     })
     socket.on("levitasyonBatarya", (data) => {
-      let i = data || 0;
       $("#levitasyonBatarya")
-        .css("width", i + "%")
-        .attr("aria-valuenow", i)
-        .text(i + "%");
+        .css("width", data + "%")
+        .attr("aria-valuenow", data)
+        .text(data + "%");
     })
-    socket.on("itkiBatarya", (data) => {
-      let i = data || 100;
+    socket.on("frenBatarya", (data) => {
       $("#itkiBatarya")
-        .css("width", i + "%")
-        .attr("aria-valuenow", i)
-        .text(i + "%");
+        .css("width", data + "%")
+        .attr("aria-valuenow", data)
+        .text(data + "%");
     })
     socket.on("ortamSıcaklığı", (data) => {
-      let i = data || 0;
       $("#ortamSıacklığı")
-        .css("width", i + "%")
-        .attr("aria-valuenow", i)
-        .text(i + "%");
+        .attr("data-percent", data)
     })
     socket.on("itkiSıcaklığı", (data) => {
-      let i = data || 0;
       $("#itkiSıcaklığı")
-        .css("width", i + "%")
-        .attr("aria-valuenow", i)
-        .text(i + "%");
+        .attr("data-percent", data)
     })
     socket.on("levitasyonSıcaklığı", (data) => {
-      let i = data||0;
-        $("#evitasyonSıcaklığı")
-          .css("width", i + "%")
-          .attr("aria-valuenow", i)
-          .text(i + "%");
+      $("#levitasyonSıcaklığı")
+        .attr("data-percent", data)
     })
-    socket.on("hiz", (data) => {
-      console.log("hiz",data)
+    socket.on("konum", (data) => {
+      $("#progress")
+        .css("width", data + "%")
+        .attr("aria-valuenow", data)
+        .text(data + "%");
     })
+    socket.on("gx", (data) => {
+      $("td:contains('hız_x')").html(data);
+    })
+    socket.on("gy", (data) => {
+      $("td:contains('hız_y')").html(data);
+    })
+    socket.on("gz", (data) => {
+      $("td:contains('hız_z')").html(data);
+    })
+    socket.on("açı_x", (data) => {
+      $("td:contains('açı_x')").html(data);
+    })
+    socket.on("açı_y", (data) => {
+      $("td:contains('açı_y')").html(data);
+
+    })
+    socket.on("açı_z", (data) => {
+      $("td:contains('açı_z')").html(data);
+    })
+    socket.on("ivme_x", (data) => {
+      $("td:contains('ivme_x')").html(data);
+    })
+    socket.on("ivme_y", (data) => {
+      $("td:contains('ivme_y')").html(data);
+
+    })
+    socket.on("ivme_z", (data) => {
+      $("td:contains('ivme_z')").html(data);
+      console.log(data)
+    })
+
   </script>
 </body>
 
