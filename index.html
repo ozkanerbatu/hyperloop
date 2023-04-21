@@ -51,7 +51,7 @@
                 data-label="İtki Sıcaklığı" data-size="200px" data-width="5" data-text_size="0.30" data-append="C"
                 data-theme="LightRed-DarkRed" data-label_color="#fff">
               </div>
-              <div class="GaugeMeter" id="GaugeMeter_1 ortamSıcaklığı" data-style="Full" data-percent=""
+              <div class="GaugeMeter" id="GaugeMeter_1 ortamSıcaklığı" data-style="Full" data-percent="50"
                 data-label="Ortam Sıcaklığı" data-size="200px" data-width="5" data-text_size="0.30" data-append="C"
                 data-theme="LightRed-DarkRed" data-label_color="#fff">
               </div>
@@ -205,8 +205,7 @@
     })
     socket.on("ortamSıcaklığı", (data) => {
       console.log(data)
-      $("#ortamSıcaklığı")
-        .attr("data-percent",data)
+      $("div:contains('50')").attr("data-percent",data);
     })
     socket.on("itkiSıcaklığı", (data) => {
       $("#itkiSıcaklığı")
