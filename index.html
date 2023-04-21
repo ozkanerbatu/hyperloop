@@ -74,7 +74,7 @@
                 </div>
               </div>
               <div class="powerbar">
-                <h3 class="progress-text">Motor Sürücü Bataryas</h3>
+                <h3 class="progress-text">Motor Sürücü Bataryası</h3>
                 <div class="progress">
                   <div id="motorSürücüBatarya" class="progress-bar bg-danger" role="progressbar" style="width: 100%;"
                     aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%
@@ -146,6 +146,7 @@
       <button id="start" type="button" class="btn btn-primary start-button">
         Başlat!
       </button>
+      <button id="levitasyon-button" type="button" class="btn btn-warning levitasyon-button"> Yer Çekimi Yok!</button>
     </div>
     <div class="progress-container">
       <h3 class="progress-text">Güncel ilerleyiş</h3>
@@ -163,41 +164,41 @@
   <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
     crossorigin="anonymous"></script>
   <script src="Plugin/GaugeMeter.js"></script>
-  <script src="http://192.168.1.39:3000/socket.io/socket.io.js"></script>
+  <script src="http://192.168.79.207:3000/socket.io/socket.io.js"></script>
   <script>
     $(document).ready(function () {
       $(".GaugeMeter").gaugeMeter();
     });
   </script>
   <script>
-    const socket = io("http://192.168.1.39:3000");
+    const socket = io("http://192.168.79.207:3000");
     socket.on("connected", (data) => {
-      console.log("Connected to server",data);
+      console.log("Connected to server", data);
     });
     socket.on("disconnect", () => {
       console.log("Disconnected from server");
     });
-   socket.on("electronicBatarya", (data) => {
-      let i = data||0;
-        $("#electronicBatarya")
-          .css("width", i + "%")
-          .attr("aria-valuenow", i)
-          .text(i + "%");
+    socket.on("electronicBatarya", (data) => {
+      let i = data || 0;
+      $("#electronicBatarya")
+        .css("width", i + "%")
+        .attr("aria-valuenow", i)
+        .text(i + "%");
     })
     socket.on("motorSürücüBatarya", (data) => {
-      let i = data||0;
-        $("motorSürücüBatarya")
-          .css("width", i + "%")
-          .attr("aria-valuenow", i)
-          .text(i + "%");
+      let i = data || 0;
+      $("motorSürücüBatarya")
+        .css("width", i + "%")
+        .attr("aria-valuenow", i)
+        .text(i + "%");
     })
     socket.on("levitasyonBatarya", (data) => {
-      console.log("levitasyonBatarya",data)
-      let i = data||0;
-        $("#levitasyonBatarya")
-          .css("width", i + "%")
-          .attr("aria-valuenow", i)
-          .text(i + "%");
+      console.log("levitasyonBatarya", data)
+      let i = data || 0;
+      $("#levitasyonBatarya")
+        .css("width", i + "%")
+        .attr("aria-valuenow", i)
+        .text(i + "%");
     })
     socket.on("itkiBatarya", (data) => {
       let i = data || 100;
@@ -207,26 +208,26 @@
         .text(i + "%");
     })
     socket.on("ortamSıcaklığı", (data) => {
-      let i = data||0;
-        $("#ortamSıacklığı")
-          .css("width", i + "%")
-          .attr("aria-valuenow", i)
-          .text(i + "%");
+      let i = data || 0;
+      $("#ortamSıacklığı")
+        .css("width", i + "%")
+        .attr("aria-valuenow", i)
+        .text(i + "%");
     })
     socket.on("itkiSıcaklığı", (data) => {
-      let i = data||0;
-        $("#itkiSıcaklığı")
-          .css("width", i + "%")
-          .attr("aria-valuenow", i)
-          .text(i + "%");
+      let i = data || 0;
+      $("#itkiSıcaklığı")
+        .css("width", i + "%")
+        .attr("aria-valuenow", i)
+        .text(i + "%");
     })
     socket.on("levitasyonSıcaklığı", (data) => {
-      console.log("levitasyonSıcaklığı",data)
-      let i = data||0;
-        $("#evitasyonSıcaklığı")
-          .css("width", i + "%")
-          .attr("aria-valuenow", i)
-          .text(i + "%");
+      console.log("levitasyonSıcaklığı", data)
+      let i = data || 0;
+      $("#evitasyonSıcaklığı")
+        .css("width", i + "%")
+        .attr("aria-valuenow", i)
+        .text(i + "%");
     })
   </script>
 </body>
