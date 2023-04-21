@@ -80,11 +80,27 @@ section {
     border: 2.5px solid #000000;
 }
 
+.stop-button:hover {
+    color: #000000;
+}
+
 .start-button {
     width: 120px;
     height: 50px;
     margin-left: 7.5%;
     border: 2.5px solid #000000;
+}
+
+.start-button:hover {
+    color: #000000;
+}
+
+.levitasyon-button {
+    width: 120px;
+    height: 50px;
+    margin-left: 7.5%;
+    color: #fff;
+    font-size: 0.9rem;
 }
 
 .progress-container {
@@ -157,8 +173,9 @@ h3 {
 
 h1 {
     text-align: center;
-    
+
 }
+
 .temperature {
     display: flex;
     flex-direction: row;
