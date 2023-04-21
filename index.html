@@ -169,29 +169,29 @@
   <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
     crossorigin="anonymous"></script>
   <script src="Plugin/GaugeMeter.js"></script>
-  <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script src="http://192.168.1.39:3000/socket.io/socket.io.js"></script>
   <script>
     $(document).ready(function () {
       $(".GaugeMeter").gaugeMeter();
     });
   </script>
   <script>
-    const socket = io("http://localhost:3000");
-    socket.on("connect", () => {
-      console.log("Connected to server");
+    const socket = io("http://192.168.1.39:3000");
+    socket.on("connected", (data) => {
+      console.log("Connected to server",data);
     });
     socket.on("disconnect", () => {
       console.log("Disconnected from server");
     });
    socket.on("electronicBatarya", (data) => {
-      let i = data||100;
+      let i = data||0;
         $("#electronicBatarya")
           .css("width", i + "%")
           .attr("aria-valuenow", i)
           .text(i + "%");
     })
     socket.on("motorSürücüBatarya", (data) => {
-      let i = data||100;
+      let i = data||0;
         $("motorSürücüBatarya")
           .css("width", i + "%")
           .attr("aria-valuenow", i)
@@ -199,35 +199,37 @@
     })
     socket.on("levitasyonBatarya", (data) => {
       console.log("levitasyonBatarya",data)
-      let i = data||100;
+      let i = data||0;
         $("#levitasyonBatarya")
           .css("width", i + "%")
           .attr("aria-valuenow", i)
           .text(i + "%");
     })
-    socket.on("itkiBatarya", (data) => {
-      let i = data||100;
+    socket.on("ssss", (data) => {
+      console.log("itkiBatarya",data)
+      let i = data||0;
         $("#itkiBatarya")
           .css("width", i + "%")
           .attr("aria-valuenow", i)
           .text(i + "%");
     })
     socket.on("ortamSıcaklığı", (data) => {
-      let i = data||100;
+      let i = data||0;
         $("#ortamSıacklığı")
           .css("width", i + "%")
           .attr("aria-valuenow", i)
           .text(i + "%");
     })
     socket.on("itkiSıcaklığı", (data) => {
-      let i = data||100;
+      let i = data||0;
         $("#itkiSıcaklığı")
           .css("width", i + "%")
           .attr("aria-valuenow", i)
           .text(i + "%");
     })
     socket.on("levitasyonSıcaklığı", (data) => {
-      let i = data||100;
+      console.log("levitasyonSıcaklığı",data)
+      let i = data||0;
         $("#evitasyonSıcaklığı")
           .css("width", i + "%")
           .attr("aria-valuenow", i)
