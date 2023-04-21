@@ -193,7 +193,6 @@
         .text(i + "%");
     })
     socket.on("levitasyonBatarya", (data) => {
-      console.log("levitasyonBatarya", data)
       let i = data || 0;
       $("#levitasyonBatarya")
         .css("width", i + "%")
@@ -224,7 +223,7 @@
     socket.on("levitasyonSıcaklığı", (data) => {
       console.log("levitasyonSıcaklığı", data)
       let i = data || 0;
-      $("#evitasyonSıcaklığı")
+      $("#levitasyonSıcaklığı")
         .css("width", i + "%")
         .attr("aria-valuenow", i)
         .text(i + "%");
