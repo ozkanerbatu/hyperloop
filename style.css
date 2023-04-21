@@ -36,8 +36,6 @@ section {
 .home-title {
     font-size: 2.25rem;
     font-weight: 1000;
-
-
 }
 
 .tabs {
@@ -59,7 +57,10 @@ section {
     justify-content: flex-start;
     margin: 1%;
     color: #fff;
-    width: 100%;
+}
+
+.Tab1 {
+    display: flex;
 }
 
 .footer {
@@ -103,6 +104,7 @@ section {
 
 .Tables {
     color: #fff;
+    width: 500px;
 }
 
 .table-underline {
@@ -114,7 +116,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 1250px;
+    width: 1350px;
     height: 700px;
     padding: 2%;
     background-color: #02132e;
@@ -122,23 +124,31 @@ section {
 
 }
 
-.photage-container {
+.Content-tab3 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 1850px;
+    height: 700px;
+    padding: 2%;
+    background-color: #02132e;
+    border: 2.5px solid #000000;
+    font-size: 2rem;
+}
+
+.table-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    display: flex;
     padding: 2%;
     margin-left: 2%;
     background-color: #02132e;
     border: 2.5px solid #000000;
 }
 
-.image {
+img {
     width: 500px;
-    height: 200px;
-    object-fit: cover;
-    object-position: center;
-    border: 2.5px solid #000000;
+    height: 300px;
 }
 
 h3 {
@@ -147,8 +157,8 @@ h3 {
 
 h1 {
     text-align: center;
+    
 }
-
 .temperature {
     display: flex;
     flex-direction: row;
@@ -203,5 +213,5 @@ h1 {
 .GaugeMeter B {
     Color: #fff;
     Font-Weight: 300;
-    Font-Size: 1.25em;
+    Font-Size: 0.95em;
 }
