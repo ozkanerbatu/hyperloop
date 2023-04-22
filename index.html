@@ -43,17 +43,68 @@
         <div class="Tab1">
           <div class="Content">
             <div class="temperature">
-              <div class="GaugeMeter" id="GaugeMeter_1 levitasyonSıcaklığı" data-percent="20"
-                data-label="Levitasyon Sıcaklığı" data-append="C" data-size="200px" data-style="Semi" data-width="5"
-                data-text_size="0.30" data-theme="LightRed-DarkRed" data-label_color="#fff">
+              <div class="skill" id="levitasyonSıcaklığı">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number">
+                      65C
+                    </div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                  <defs>
+                    <linearGradient id="GradientColor">
+
+                      <stop offset="0%" stop- color="#DA22FF" />
+
+                      <stop offset="100%" stop- color="#9733EE" />
+
+                    </linearGradient>
+                  </defs>
+                  <circle id="circle1" cx="80" cy="80" r="70" stroke-linecap="round" />
+                </svg>
               </div>
-              <div class="GaugeMeter" id="GaugeMeter_1 itkiSıcaklığı" data-style="Full" data-percent="75"
-                data-label="İtki Sıcaklığı" data-size="200px" data-width="5" data-text_size="0.30" data-append="C"
-                data-theme="LightRed-DarkRed" data-label_color="#fff">
+              <div class="skill" id="itkiSıcaklığı">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number">
+                      <p>80C</p>
+                    </div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                  <defs>
+                    <linearGradient id="GradientColor">
+
+                      <stop offset="0%" stop- color="#DA22FF" />
+
+                      <stop offset="100%" stop- color="#9733EE" />
+
+                    </linearGradient>
+                  </defs>
+                  <circle id="cirlce2" cx="80" cy="80" r="70" stroke-linecap="round" />
+                </svg>
               </div>
-              <div class="GaugeMeter" id="GaugeMeter_1 ortamSıcaklığı" data-style="Full" data-percent="50"
-                data-label="Ortam Sıcaklığı" data-size="200px" data-width="5" data-text_size="0.30" data-append="C"
-                data-theme="LightRed-DarkRed" data-label_color="#fff">
+              <div class="skill" id="ortamSıcaklığı">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number">
+                      <p>35C</p>
+                    </div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                  <defs>
+                    <linearGradient id="GradientColor">
+
+                      <stop offset="0%" stop- color="#DA22FF" />
+
+                      <stop offset="100%" stop- color="#9733EE" />
+
+                    </linearGradient>
+                  </defs>
+                  <circle id="circle3" cx="80" cy="80" r="70" stroke-linecap="round" />
+                </svg>
               </div>
             </div>
             <div class="powerbar-container grid-container">
@@ -171,6 +222,11 @@
     });
   </script>
   <script>
+    $("#start").click(function () {
+      $("p:contains('80C')").html("55C");
+    })
+  </script>
+  <script>
     const socket = io("http://192.168.79.44:3000");
     socket.on("connected", (data) => {
       console.log("Connected to server", data);
@@ -204,16 +260,13 @@
         .text(data + "%");
     })
     socket.on("ortamSıcaklığı", (data) => {
-      console.log(data)
-      $("div:contains('50')").attr("data-percent",data);
+      $("p:contains('35C')").html(data);
     })
     socket.on("itkiSıcaklığı", (data) => {
-      $("#itkiSıcaklığı")
-        .attr("data-percent", data)
+      $("p:contains('80C')").html(data);
     })
     socket.on("levitasyonSıcaklığı", (data) => {
-      $("#levitasyonSıcaklığı")
-        .attr("data-percent", data)
+      $("p:contains('65C')").html(data);
     })
     socket.on("konum", (data) => {
       $("#progress")

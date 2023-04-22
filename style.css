@@ -194,41 +194,74 @@ h1 {
     margin-top: 12.5%;
 }
 
-.GaugeMeter {
-    Position: Relative;
-    Text-Align: Center;
-    Overflow: Hidden;
-    Cursor: Default;
+.skill {
+    width: 160px;
+    height: 160px;
+    position: relative;
 }
 
-.GaugeMeter SPAN,
-.GaugeMeter B {
-    Margin: 0 23%;
-    Width: 54%;
-    Position: Absolute;
-    Text-align: Center;
-    Display: Inline-Block;
-    Color: #fff;
-    Font-Weight: 100;
-    Font-Family: "Open Sans", Arial;
-    Overflow: Hidden;
-    White-Space: NoWrap;
-    Text-Overflow: Ellipsis;
+.outer {
+    height: 160px;
+    width: 160px;
+    padding: 20px;
+    padding: 20px;
+    border-radius: 50%;
+
 }
 
-.GaugeMeter[data-style="Semi"] B {
-    Margin: 0 10%;
-    Width: 80%;
+.inner {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
-.GaugeMeter S,
-.GaugeMeter U {
-    Text-Decoration: None;
-    Font-Size: 0.66em;
+#number {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 30px;
 }
 
-.GaugeMeter B {
-    Color: #fff;
-    Font-Weight: 300;
-    Font-Size: 0.95em;
+circle {
+    fill: none;
+    stroke: darkorange;
+    stroke-width: 20px;
+    stroke-dasharray: 450;
+    stroke-dashoffset: 100;
+    animation: anim 2s linear forwards;
+}
+
+#circle1 {
+    fill: none;
+    stroke: #dc3545;
+    stroke-width: 20px;
+    stroke-dasharray: 450;
+    stroke-dashoffset: 100;
+}
+
+#cirlce2 {
+    fill: none;
+    stroke: #0a58ca;
+    stroke-width: 20px;
+    stroke-dasharray: 450;
+    stroke-dashoffset: 150;
+
+}
+
+#circle3 {
+    fill: none;
+    stroke: #ffc107;
+    stroke-width: 20px;
+    stroke-dasharray: 450;
+    stroke-dashoffset: 200;
+
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
