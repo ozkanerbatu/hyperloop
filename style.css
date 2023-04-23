@@ -27,12 +27,6 @@ section {
     text-align: center;
     color: #fff;
 }
-
-.home-text span {
-    color: #fff;
-    /*Daha sonra değiştirilebilir*/
-}
-
 .home-title {
     font-size: 2.25rem;
     font-weight: 1000;
@@ -77,10 +71,24 @@ section {
 .stop-button {
     width: 120px;
     height: 50px;
-    border: 2.5px solid #000000;
+    font-size: 0.9rem;
+    color: #fff;
+    margin-left: 7.5%;
+    background-color: tomato;
+    border-radius: 0.375rem;
 }
 
 .stop-button:hover {
+    color: #000000;
+}
+
+.acil-button {
+    width: 120px;
+    height: 50px;
+    font-size: 0.9rem;
+}
+
+.acil-button:hover {
     color: #000000;
 }
 
@@ -88,7 +96,7 @@ section {
     width: 120px;
     height: 50px;
     margin-left: 7.5%;
-    border: 2.5px solid #000000;
+    font-size: 0.9rem;
 }
 
 .start-button:hover {
@@ -98,9 +106,9 @@ section {
 .levitasyon-button {
     width: 120px;
     height: 50px;
-    margin-left: 7.5%;
     color: #fff;
     font-size: 0.9rem;
+    margin-left: 7.5%;
 }
 
 .progress-container {
@@ -136,7 +144,6 @@ section {
     height: 700px;
     padding: 2%;
     background-color: #02132e;
-    border: 2.5px solid #000000;
 
 }
 
@@ -148,7 +155,6 @@ section {
     height: 700px;
     padding: 2%;
     background-color: #02132e;
-    border: 2.5px solid #000000;
     font-size: 2rem;
 }
 
@@ -159,14 +165,12 @@ section {
     padding: 2%;
     margin-left: 2%;
     background-color: #02132e;
-    border: 2.5px solid #000000;
 }
 
 img {
     width: 500px;
     height: 300px;
 }
-
 h3 {
     color: #fff;
 }
@@ -238,16 +242,16 @@ circle {
     fill: none;
     stroke: #dc3545;
     stroke-width: 20px;
-    stroke-dasharray: 450;
-    stroke-dashoffset: 100;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 0;
 }
 
 #cirlce2 {
     fill: none;
     stroke: #0a58ca;
     stroke-width: 20px;
-    stroke-dasharray: 450;
-    stroke-dashoffset: 150;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 0;
 
 }
 
@@ -255,13 +259,16 @@ circle {
     fill: none;
     stroke: #ffc107;
     stroke-width: 20px;
-    stroke-dasharray: 450;
-    stroke-dashoffset: 200;
-
+    stroke-dasharray: 300;
+    stroke-dashoffset: 0;
 }
 
 svg {
     position: absolute;
     top: 0;
     left: 0;
+}
+#timer{
+    color: #000000;
+    font-size: 1rem;
 }
