@@ -60,6 +60,7 @@ section {
 .footer {
     display: flex;
     align-items: center;
+    margin-right: 2.5%;
 }
 
 .Buttons {
@@ -150,7 +151,7 @@ section {
 .Content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 1350px;
     height: 700px;
     padding: 2%;

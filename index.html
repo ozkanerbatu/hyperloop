@@ -204,7 +204,9 @@
       <button id="durdur" type="button" class="stop-button">
         Dur!
       </button>
-      <button id="Geri"type="button"class="geri-al">Geri Gel!</button>
+      <button id="Geri" type="button" class="geri-al">
+        Geri Gel!
+      </button>
     </div>
     <div class="progress-container">
       <h3 class="progress-text">Güncel ilerleyiş</h3>
@@ -300,14 +302,14 @@
       $("td:contains('ivme_z')").html(data);
       console.log(data)
     })
-    socket.on("başlat",() => {
+    socket.on("başlat", () => {
       let isStarted = false;
       $("#başlat").click(function () {
         isStarted = true;
         socket.emit("başlat", isStarted)
       })
     })
-    socket.on("acil", ()=> {
+    socket.on("acil", () => {
       let isAcil = false;
       $("#acil").click(function () {
         isAcil = true;
@@ -326,6 +328,13 @@
       $("#durdur").click(function () {
         Dur = true;
         socket.emit("durdur", isDur);
+      })
+    })
+    socket.on("gerial", () => {
+      let isGeri = false;
+      $("#Geri").click(function () {
+        isGeri = true;
+        socket.emit("gerial", isGeri);
       })
     })
   </script>
