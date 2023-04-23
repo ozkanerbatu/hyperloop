@@ -89,7 +89,7 @@
                 <div class="outer">
                   <div class="inner">
                     <div id="number">
-                      <p>35C</p>
+                      <p id="temperature">35C</p>
                     </div>
                   </div>
                 </div>
@@ -177,7 +177,6 @@
             </div>
             <div>
               <h3>Ekran</h3>
-              <img src="assets/hyperloop.image.jpg" alt="Resim">
             </div>
           </div>
         </div>
@@ -185,6 +184,8 @@
       <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
         <div class="Content-tab3">
           <h3 class="ekran">Ekran</h3>
+          <embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" version="VideoLAN.VLCPlugin.2"
+            width="100%" height="100%" id="vIc" loop="yes" autoplay="yes" target="rtsp://admin:admin123@192.168.1.108:554/cam/realmonitor?channel=1&subtype=1"> </embed>
         </div>
       </div>
     </div>
@@ -259,6 +260,7 @@
     })
     socket.on("ortamSıcaklığı", (data) => {
       $("p:contains('35C')").html(data);
+      document.getElementById('circle3').style["strokeDasharray"] = (data * 4.5).toString()
       console.log(data)
     })
     socket.on("itkiSıcaklığı", (data) => {

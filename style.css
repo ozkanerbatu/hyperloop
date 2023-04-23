@@ -186,8 +186,8 @@ section {
 }
 
 img {
-    width: 500px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
 }
 
 h3 {
@@ -248,20 +248,11 @@ h1 {
     font-size: 30px;
 }
 
-circle {
-    fill: none;
-    stroke: darkorange;
-    stroke-width: 20px;
-    stroke-dasharray: 450;
-    stroke-dashoffset: 100;
-    animation: anim 2s linear forwards;
-}
-
 #circle1 {
     fill: none;
     stroke: #dc3545;
     stroke-width: 20px;
-    stroke-dasharray: 300;
+    stroke-dasharray: 450;
     stroke-dashoffset: 0;
 }
 
@@ -269,7 +260,7 @@ circle {
     fill: none;
     stroke: #0a58ca;
     stroke-width: 20px;
-    stroke-dasharray: 300;
+    stroke-dasharray: 450;
     stroke-dashoffset: 0;
 
 }
@@ -278,7 +269,7 @@ circle {
     fill: none;
     stroke: #ffc107;
     stroke-width: 20px;
-    stroke-dasharray: 300;
+    stroke-dasharray: 450;
     stroke-dashoffset: 0;
 }
 
