@@ -155,19 +155,19 @@
                 </thead>
                 <tbody class="table-underline">
                   <tr class="table-underline">
-                    <td scope="row" id="konum_x">X:0</td>
+                    <td scope="row" id="konum_x">konum_x</td>
                     <td id="gx">hız_x</td>
                     <td id="ivme_x">ivme_x</td>
                     <td id="açı_x">açı_x</td>
                   </tr>
                   <tr class="table-underline">
-                    <td scope="row" id="konum_y">Y:0</td>
+                    <td scope="row" id="konum_y">konum_y</td>
                     <td id="gy">hız_y</td>
                     <td id="ivme_y">ivme_y</td>
                     <td id="açı_y">açı_y</td>
                   </tr>
                   <tr class="table-underline">
-                    <td scope="row" id="konum_z">Z:0</td>
+                    <td scope="row" id="konum_z">konum_z</td>
                     <td id="gz">hız_z</td>
                     <td id="ivme_z">ivme_z</td>
                     <td id="açı_z">açı_z</td>
@@ -299,8 +299,17 @@
 
     })
     socket.on("ivme_z", (data) => {
-      $("td:contains('ivme_z')").html(data);
-      console.log(data)
+      $("td:contains('açı_z')").html(data);
+    })
+    socket.on("konum_x", (data) => {
+      $("td:contains('konum_x')").html(data);
+    })
+    socket.on("konum_y", (data) => {
+      $("td:contains('konum_y')").html(data);
+
+    })
+    socket.on("konum_z", (data) => {
+      $("td:contains('konum_z')").html(data);
     })
     socket.on("başlat", () => {
       let isStarted = false;
