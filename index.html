@@ -223,9 +223,9 @@
     crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
     crossorigin="anonymous"></script>
-  <script src="http://192.168.79.44:3000/socket.io/socket.io.js"></script>
+  <script src="http://192.168.79.207:3000/socket.io/socket.io.js"></script>
   <script>
-    const socket = io("http://192.168.79.44:3000");
+    const socket = io("http://192.168.79.207:3000");
     socket.on("connected", (data) => {
       console.log("Connected to server", data);
       socket.emit("client_id", data);
@@ -259,9 +259,11 @@
     })
     socket.on("ortamSıcaklığı", (data) => {
       $("p:contains('35C')").html(data);
+      console.log(data)
     })
     socket.on("itkiSıcaklığı", (data) => {
       $("p:contains('80C')").html(data);
+
     })
     socket.on("levitasyonSıcaklığı", (data) => {
       $("p:contains('65C')").html(data);
@@ -311,40 +313,34 @@
     socket.on("konum_z", (data) => {
       $("td:contains('konum_z')").html(data);
     })
-    socket.on("başlat", () => {
-      let isStarted = false;
-      $("#başlat").click(function () {
-        isStarted = true;
-        socket.emit("başlat", isStarted)
-      })
+    let isStarted = false;
+    $("#başlat").click(function () {
+      isStarted = true;
+      socket.emit("başlat", isStarted)
     })
-    socket.on("acil", () => {
-      let isAcil = false;
-      $("#acil").click(function () {
-        isAcil = true;
-        socket.emit("acil", isAcil);
-      })
+
+    let isAcil = false;
+    $("#acil").click(function () {
+      isAcil = true;
+      socket.emit("acil", isAcil);
     })
-    socket.on("hazır", () => {
-      let isHazır = false;
-      $("#hazır").click(function () {
-        isHazır = true;
-        socket.emit("hazır", isHazır);
-      })
+    let isHazır = false;
+    $("#hazır").click(function () {
+      isHazır = true;
+      socket.emit("hazır", isHazır);
     })
-    socket.on("durdur", () => {
-      let isDur = false;
-      $("#durdur").click(function () {
-        isDur = true;
-        socket.emit("durdur", isDur);
-      })
+    let isDur = false;
+    $("#durdur").click(function () {
+      console.log("sssss");
+      isDur = true;
+      console.log("sssss");
+      socket.emit("durdur", isDur);
     })
-    socket.on("gerial", () => {
-      let isGeri = false;
-      $("#Geri").click(function () {
-        isGeri = true;
-        socket.emit("gerial", isGeri);
-      })
+
+    let isGeri = false;
+    $("#Geri").click(function () {
+      isGeri = true;
+      socket.emit("gerial", isGeri);
     })
   </script>
   <script>
