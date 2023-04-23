@@ -299,32 +299,32 @@
       $("td:contains('ivme_z')").html(data);
       console.log(data)
     })
-    socket.on("#başlat", data => {
+    socket.on("başlat",() => {
       let isStarted = false;
-      $("#start").click(function () {
+      $("#başlat").click(function () {
         isStarted = true;
-        socket.emit("#start", isStarted)
+        socket.emit("başlat", isStarted)
       })
     })
-    socket.on("#acil", data => {
+    socket.on("acil", ()=> {
       let isAcil = false;
       $("#acil").click(function () {
         isAcil = true;
-        socket.emit("#acil", isAcil);
+        socket.emit("acil", isAcil);
       })
     })
-    socket.on("#hazır", data => {
+    socket.on("hazır", () => {
       let isHazır = false;
       $("#hazır").click(function () {
         isHazır = true;
-        socket.emit("#hazır", isHazır);
+        socket.emit("hazır", isHazır);
       })
     })
-    socket.on("#durdur", data => {
+    socket.on("durdur", () => {
       let Dur = false;
-      $("#stop").click(function () {
+      $("#durdur").click(function () {
         Dur = true;
-        socket.emit("#stop", isDur);
+        socket.emit("durdur", isDur);
       })
     })
   </script>
@@ -340,11 +340,17 @@
             clearInterval(downloadTimer)
             document.querySelector('#başlat').removeAttribute("disabled");
           }
-        }, 1000);
-
+        }, 10);
       }
     });
-
+  </script>
+  <script>
+    $("#başlat").click(function () {
+      $("#başlat").prop("disabled", true);
+      $("#durdur").on("click", function () {
+        $("#başlat").prop("disabled", false);
+      });
+    });
   </script>
 </body>
 
