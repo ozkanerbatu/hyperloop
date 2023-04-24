@@ -1,30 +1,32 @@
-const { app, BrowserWindow } = require('electron')
-const path = require('path')
+const { app, BrowserWindow } = require("electron");
+let $ = (jQuery = require("jquery"));
+const electron = require("electron");
+const path = require("path");
 
-function createWindow () {
+function createWindow() {
+  const { width, height } = electron.screen.getPrimaryDisplay().workAreaSize;
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: width-100,
+    height: height,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
-    }
-  })
+      preload: path.join(__dirname, "preload.js"),
+    },
+  });
 
-  win.loadFile('index.html')
+  win.loadFile("index.html");
 }
 
 app.whenReady().then(() => {
-  createWindow()
-
-  app.on('activate', () => {
+  createWindow();
+  app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow()
+      createWindow();
     }
-  })
-})
+  });
+});
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit()
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
+    app.quit();
   }
-})
+});

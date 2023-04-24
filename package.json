@@ -19,6 +19,8 @@
     "electron": "^23.2.0"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "jquery": "^3.6.4",
+    "streamedian": "github:Streamedian/html5_rtsp_player"
   }
 }
