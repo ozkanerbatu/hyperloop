@@ -47,7 +47,7 @@
                 <div class="outer">
                   <div class="inner">
                     <div id="number">
-                      65C
+                     <p id="ls" >0</p>
                     </div>
                   </div>
                 </div>
@@ -68,7 +68,7 @@
                 <div class="outer">
                   <div class="inner">
                     <div id="number">
-                      <p>80C</p>
+                      <p id="is" >0</p>
                     </div>
                   </div>
                 </div>
@@ -89,7 +89,7 @@
                 <div class="outer">
                   <div class="inner">
                     <div id="number">
-                      <p id="temperature">35C</p>
+                      <p id="os">0</p>
                     </div>
                   </div>
                 </div>
@@ -175,9 +175,6 @@
                 </tbody>
               </table>
             </div>
-            <div>
-              <h3>Ekran3</h3>
-            </div>
           </div>
         </div>
       </div>
@@ -259,16 +256,17 @@
         .text(data + "%");
     })
     socket.on("ortamSıcaklığı", (data) => {
-      $("p:contains('35C')").html(data);
+      $("#os").text(data);
       document.getElementById('circle3').style["strokeDasharray"] = (data * 4.5).toString()
       console.log(data)
     })
+ 
     socket.on("itkiSıcaklığı", (data) => {
-      $("p:contains('80C')").html(data);
+      $("#is").text(data);
 
     })
     socket.on("levitasyonSıcaklığı", (data) => {
-      $("p:contains('65C')").html(data);
+      $("#ls").text(data);
     })
     socket.on("konum", (data) => {
       $("#progress")
@@ -277,20 +275,19 @@
         .text(data + "%");
     })
     socket.on("gx", (data) => {
-      $("td:contains('hız_x')").html(data);
+      $("#acı_x").text(data);
     })
     socket.on("gy", (data) => {
-      $("td:contains('hız_y')").html(data);
+      $("#acı_y").text(data);
     })
     socket.on("gz", (data) => {
-      $("td:contains('hız_z')").html(data);
+      $("#acı_z").text(data);
     })
     socket.on("açı_x", (data) => {
       $("td:contains('açı_x')").html(data);
     })
     socket.on("açı_y", (data) => {
       $("td:contains('açı_y')").html(data);
-
     })
     socket.on("açı_z", (data) => {
       $("td:contains('açı_z')").html(data);
