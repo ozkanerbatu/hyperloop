@@ -47,7 +47,7 @@
                 <div class="outer">
                   <div class="inner">
                     <div id="number">
-                     <p id="ls" >0</p>
+                      <p id="ls">0</p>
                     </div>
                   </div>
                 </div>
@@ -68,7 +68,7 @@
                 <div class="outer">
                   <div class="inner">
                     <div id="number">
-                      <p id="is" >0</p>
+                      <p id="is">0</p>
                     </div>
                   </div>
                 </div>
@@ -260,7 +260,7 @@
       document.getElementById('circle3').style["strokeDasharray"] = (data * 4.5).toString()
       console.log(data)
     })
- 
+
     socket.on("itkiSıcaklığı", (data) => {
       $("#is").text(data);
 
@@ -284,33 +284,33 @@
       $("#acı_z").text(data);
     })
     socket.on("açı_x", (data) => {
-      $("td:contains('açı_x')").html(data);
+      $("#gx").text(data);
     })
     socket.on("açı_y", (data) => {
-      $("td:contains('açı_y')").html(data);
+      $("#gy").text(data);
     })
     socket.on("açı_z", (data) => {
-      $("td:contains('açı_z')").html(data);
+      $("#gz").text(data);
     })
     socket.on("ivme_x", (data) => {
-      $("td:contains('ivme_x')").html(data);
+      $("#ivme_x").text(data);
     })
     socket.on("ivme_y", (data) => {
-      $("td:contains('ivme_y')").html(data);
+      $("#ivme_y").text(data);
 
     })
     socket.on("ivme_z", (data) => {
-      $("td:contains('açı_z')").html(data);
+      $("#ivme_z").text(data);
     })
     socket.on("konum_x", (data) => {
-      $("td:contains('konum_x')").html(data);
+      $("#konum_x").text(data);
     })
     socket.on("konum_y", (data) => {
-      $("td:contains('konum_y')").html(data);
+      $("#konum_y").text(data);
 
     })
     socket.on("konum_z", (data) => {
-      $("td:contains('konum_z')").html(data);
+      $("#konum_z").text(data);
     })
     let isStarted = false;
     $("#başlat").click(function () {
@@ -332,7 +332,6 @@
     $("#durdur").click(function () {
       console.log("sssss");
       isDur = true;
-      console.log("sssss");
       socket.emit("durdur", isDur);
     })
 
