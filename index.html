@@ -210,7 +210,7 @@
         Dur!
       </button>
       <button id="Geri" type="button" class="geri-al">
-        Geri Gel!
+        Fren Kalibre!
       </button>
     </div>
     <div class="progress-container">
@@ -228,9 +228,9 @@
     crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
     crossorigin="anonymous"></script>
-  <script src="http://192.168.93.207:3000/socket.io/socket.io.js"></script>
+  <script src="http://192.168.174.207:3000/socket.io/socket.io.js"></script>
   <script>
-    const socket = io("http://192.168.93.207:3000");
+    const socket = io("http://192.168.174.207:3000");
     socket.on("connected", (data) => {
       console.log("Connected to server", data);
       socket.emit("client_id", data);
@@ -282,6 +282,9 @@
         .css("width", data + "%")
         .attr("aria-valuenow", data)
         .text(data + "%");
+    })
+    socket.on("renkSensorü", (data) => {
+      $("#renk-sayaç").text(data)
     })
     socket.on("gx", (data) => {
       $("#açı_x").text(data);
