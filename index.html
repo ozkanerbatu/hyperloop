@@ -216,9 +216,9 @@
     crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
     crossorigin="anonymous"></script>
-  <script src="http://192.168.79.207:3000/socket.io/socket.io.js"></script>
+  <script src="http://192.168.93.200:3000/socket.io/socket.io.js"></script>
   <script>
-    const socket = io("http://192.168.79.207:3000");
+    const socket = io("http://192.168.93.200:3000");
     socket.on("connected", (data) => {
       console.log("Connected to server", data);
       socket.emit("client_id", data);
@@ -233,7 +233,7 @@
         .text(data + "%");
     })
     socket.on("motorSürücüBatarya", (data) => {
-      $("motorSürücüBatarya")
+      $("#motorSürücüBatarya")
         .css("width", data + "%")
         .attr("aria-valuenow", data)
         .text(data + "%");
@@ -261,22 +261,24 @@
 
     })
     socket.on("levitasyonSıcaklığı", (data) => {
+      console.log(data,+"levitasyon")
       $("#ls").text(data);
     })
     socket.on("konum", (data) => {
+      console.log(data,+"konum")
       $("#progress")
         .css("width", data + "%")
         .attr("aria-valuenow", data)
         .text(data + "%");
     })
     socket.on("gx", (data) => {
-      $("#acı_x").text(data);
+      $("#açı_x").text(data);
     })
     socket.on("gy", (data) => {
-      $("#acı_y").text(data);
+      $("#açı_y").text(data);
     })
     socket.on("gz", (data) => {
-      $("#acı_z").text(data);
+      $("#açı_z").text(data);
     })
     socket.on("açı_x", (data) => {
       $("#gx").text(data);
@@ -307,6 +309,10 @@
     socket.on("konum_z", (data) => {
       $("#konum_z").text(data);
     })
+    socket.on("hiz", (data) => {
+      $("#hız_x").text(data);
+    })
+
     let isStarted = false;
     $("#başlat").click(function () {
       isStarted = true;
