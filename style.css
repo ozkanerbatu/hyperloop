@@ -179,7 +179,7 @@ section {
 .table-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 2%;
     margin-left: 2%;
     background-color: #02132e;
@@ -282,4 +282,25 @@ svg {
 #timer {
     color: #000000;
     font-size: 1rem;
+}
+
+#renk-container {
+    color: #fff;
+
+}
+
+#renk-sayaç {
+    font-size: 1.2rem;
+
+}
+
+.sıcaklık-isim {
+    margin-top: 7.5%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.ortam-sıcaklığı {
+    font-size: 1.25rem;
 }

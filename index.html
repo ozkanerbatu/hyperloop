@@ -46,6 +46,9 @@
                     </div>
                   </div>
                 </div>
+                <div class="sıcaklık-isim">
+                  <p class="ortam-sıcaklığı">Levitasyon Sıcaklığı</p>
+                </div>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
                   <defs>
                     <linearGradient id="GradientColor">
@@ -67,6 +70,9 @@
                     </div>
                   </div>
                 </div>
+                <div class="sıcaklık-isim">
+                  <p class="ortam-sıcaklığı">İtki Sıcaklığı</p>
+                </div>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
                   <defs>
                     <linearGradient id="GradientColor">
@@ -87,6 +93,9 @@
                       <p id="os">0</p>
                     </div>
                   </div>
+                </div>
+                <div class="sıcaklık-isim">
+                  <p class="ortam-sıcaklığı">Ortam Sıcaklığı</p>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
                   <defs>
@@ -170,6 +179,9 @@
                 </tbody>
               </table>
             </div>
+            <div id="renk-container">
+              <p id="renk-sayaç">Şerit Sayısı: 0</p>
+            </div>
           </div>
         </div>
       </div>
@@ -187,7 +199,7 @@
       <button id="acil" type="button" class="btn btn-danger acil-button">
         Acil Durum!
       </button>
-      <button id="başlat" type="button" class="btn btn-primary start-button" disabled>
+      <button id="başlat" type="button" class="btn btn-primary start-button">
         Başlat!
       </button>
       <button id="hazır" type="button" class="btn btn-warning levitasyon-button">
@@ -346,30 +358,6 @@
       isGeri = true;
       socket.emit("gerial", isGeri);
     })
-  </script>
-  <script>
-    let timeleft = 10;
-    let downloadTimer = null;
-    document.getElementById("hazır").addEventListener("click", function () {
-      if (downloadTimer == null) {
-        downloadTimer = setInterval(function () {
-          timeleft--;
-          document.getElementById("timer").textContent = timeleft;
-          if (timeleft <= 0) {
-            clearInterval(downloadTimer)
-            document.querySelector('#başlat').removeAttribute("disabled");
-          }
-        }, 1000);
-      }
-    });
-  </script>
-  <script>
-    $("#başlat").click(function () {
-      $("#başlat").prop("disabled", true);
-      $("#durdur").on("click", function () {
-        $("#başlat").prop("disabled", false);
-      });
-    });
   </script>
 </body>
 
